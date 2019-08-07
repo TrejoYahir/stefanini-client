@@ -1,0 +1,10 @@
+<mat-grid-list cols="12">
+  <mat-grid-tile colspan="12">
+    <mat-progress-spinner
+      *ngIf="postService.loadingPosts"
+      color="primary"
+      mode="indeterminate">
+    </mat-progress-spinner>
+
+  </mat-grid-tile>
+</mat-grid-list>

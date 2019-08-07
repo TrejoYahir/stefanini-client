@@ -1,0 +1,18 @@
+<mat-progress-spinner
+  *ngIf="userService.loadingUsers"
+  color="primary"
+  mode="indeterminate">
+</mat-progress-spinner>
+<mat-list>
+  <mat-list-item *ngFor="let user of userList" matRipple class="user-list-item">
+    <img matListAvatar [src]="user.avatar" alt="{{user.firstName}} {{user.lastName}}">
+    <h3 matLine> {{user.firstName}} {{user.lastName}} </h3>
+    <p matLine>
+      <span> {{user.email}} </span>
+    </p>
+    <mat-divider [inset]="true"></mat-divider>
+  </mat-list-item>
+  <mat-list-item matRipple class="user-list-item">
+      <p class="load-more">Cargar más</p>
+  </mat-list-item>
+</mat-list>
