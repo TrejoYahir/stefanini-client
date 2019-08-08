@@ -3,3 +3,9 @@
   width: auto;
   padding: 16px;
 }
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}

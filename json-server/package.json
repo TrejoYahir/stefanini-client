@@ -2,7 +2,7 @@
   "name": "stefanini-interview-backend",
   "version": "1.0.0",
   "description": "Fake randomly generated server for the main Angular project",
-  "main": "generator.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

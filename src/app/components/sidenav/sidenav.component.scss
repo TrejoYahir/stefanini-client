@@ -1,9 +1,17 @@
-.user-list-item {
-  cursor: pointer;
+.user-list {
+  text-align: center;
+  .user-list-item {
+    cursor: pointer;
+    text-align: left;
+  }
 }
 
 .load-more {
   width: 100%;
   font-weight: bold;
   text-align: center;
+}
+
+.mat-progress-spinner {
+  display: inline-block;
 }

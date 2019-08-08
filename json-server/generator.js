@@ -26,12 +26,14 @@ function generateData() {
     const title = faker.hacker.phrase();
     const description = faker.lorem.paragraphs();
     const userId = faker.random.number( userCount - 1 );
+    const picture = faker.image.avatar();
     return {
       id,
       date,
       title,
       description,
-      userId
+      userId,
+      picture
     };
   }
 

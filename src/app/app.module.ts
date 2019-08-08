@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import {
-  MatGridListModule,
-  MatListModule,
+  MatButtonModule,
+  MatCardModule,
+  MatGridListModule, MatIconModule,
+  MatListModule, MatMenuModule, MatPaginatorModule,
   MatProgressSpinnerModule, MatRippleModule,
   MatSidenavModule,
   MatSnackBarModule,
@@ -17,13 +19,15 @@ import { HeaderComponent } from './components/header/header.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ServerHttpInterceptor} from './interceptors/server.interceptor';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import {PostComponent} from './components/post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,12 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MatProgressSpinnerModule,
     MatSnackBarModule,
     MatListModule,
-    MatRippleModule
+    MatRippleModule,
+    MatPaginatorModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     {

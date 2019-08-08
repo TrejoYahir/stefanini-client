@@ -1,3 +1,8 @@
-<mat-toolbar color="primary">
-  <img src="https://stefanini.com/etc.clientlibs/PortalStefanini/clientlibs/clientlib-base/resources/img/logo-branco.svg" class="header-logo">
+<mat-toolbar color="primary" class="sticky-header">
+  <button mat-icon-button *ngIf="isMobile" (click)="toggleNav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img
+    src="https://stefanini.com/etc.clientlibs/PortalStefanini/clientlibs/clientlib-base/resources/img/logo-branco.svg"
+    class="header-logo" [ngClass]="{'float-left': isMobile}">
 </mat-toolbar>

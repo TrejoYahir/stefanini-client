@@ -1,9 +1,9 @@
 <app-header></app-header>
 
-<mat-sidenav-container>
-  <mat-sidenav mode="side" opened
-               [fixedInViewport]="true" [fixedTopGap]="64"
-               [fixedBottomGap]="0">
+<mat-sidenav-container autosize>
+  <mat-sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile"
+               [fixedInViewport]="true" [fixedTopGap]="isMobile ? 56 : 64"
+               [fixedBottomGap]="0" #nav>
     <app-sidenav></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>

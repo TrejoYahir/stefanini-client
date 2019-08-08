@@ -7,6 +7,8 @@ export class Post {
     public title: string,
     public description: string,
     public date: string,
+    public liked: boolean,
+    public picture: string,
     public user?: User) {}
 
 }
