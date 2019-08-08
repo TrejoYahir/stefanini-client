@@ -24,7 +24,7 @@ export class PostService {
 
   public getPostList(page: number = 1) {
     this.loadingPosts = true;
-    return this.http.get(`posts?_page=${page}&_limit=${this.postLimit}`)
+    return this.http.get(`posts?_page=${page}&_limit=${this.postLimit}&_expand=user`)
       .pipe(
         catchError((error: any) => {
           console.log('POSTS FETCHING ERROR', error);

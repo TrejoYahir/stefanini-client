@@ -1,6 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {MatSnackBar} from '@angular/material';
+import {PaginatedList} from '../../classes/paginated-list.class';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,7 +10,7 @@ import {MatSnackBar} from '@angular/material';
 })
 export class SidenavComponent implements OnDestroy {
   public userListSub: any;
-  public userList: any[];
+  public userList: PaginatedList;
 
   constructor(public userService: UserService, private snackBar: MatSnackBar) {
     this.snackBar.open('Welcome again', 'Close', {
@@ -23,4 +24,7 @@ export class SidenavComponent implements OnDestroy {
     this.userListSub.unsubscribe();
   }
 
+  public loadNextPage() {
+    this.userService.getUserList();
+  }
 }
