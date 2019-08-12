@@ -1,0 +1,14 @@
+.post-card {
+  text-align: left;
+  max-width: 400px;
+  display: inline-block;
+  margin: 1rem 0.5rem;
+  padding-bottom: 50px;
+  .post-header {
+    cursor: pointer;
+  }
+}
+
+.post-header-image {
+  background-size: cover;
+}

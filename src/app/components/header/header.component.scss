@@ -1,0 +1,11 @@
+.header-logo {
+  height: calc(100% - 32px);
+  width: auto;
+  padding: 16px;
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}

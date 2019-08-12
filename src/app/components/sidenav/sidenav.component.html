@@ -1,0 +1,43 @@
+<mat-list class="user-list">
+
+  <!-- let the user know that content is loading for the first time -->
+  <mat-progress-spinner
+    *ngIf="userService.loadingUsers && userList.list.length === 0"
+    color="primary"
+    diameter="30"
+    mode="indeterminate">
+  </mat-progress-spinner>
+  <!-- end loader -->
+
+  <!-- user list -->
+  <mat-list-item
+    (click)="setUserFilter(user)"
+    *ngFor="let user of userList.list" matRipple class="user-list-item">
+    <img matListAvatar [src]="user.avatar" alt="{{user.firstName}} {{user.lastName}}">
+    <h3 matLine> {{user.firstName}} {{user.lastName}} </h3>
+    <p matLine>
+      <span> {{user.email}} </span>
+    </p>
+    <mat-divider [inset]="true"></mat-divider>
+  </mat-list-item>
+  <!-- end user list -->
+
+  <!-- show a different loader when user is loading more content -->
+  <mat-progress-spinner
+    *ngIf="userService.loadingUsers && userList.list.length > 0"
+    color="primary"
+    diameter="30"
+    mode="indeterminate">
+  </mat-progress-spinner>
+  <!-- end loader 2 -->
+
+  <!-- 'Show more' button -->
+  <mat-list-item matRipple class="user-list-item"
+                 *ngIf="!userService.loadingUsers && userList.remainingPages > 0"
+                 (click)="loadNextPage()">
+    <p class="load-more">
+      Show more
+    </p>
+  </mat-list-item>
+  <!-- End 'Show more' button -->
+</mat-list>

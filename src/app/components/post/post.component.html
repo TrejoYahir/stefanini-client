@@ -1,0 +1,21 @@
+<mat-card class="post-card">
+
+  <!-- Post header containing user details -->
+  <mat-card-header matRipple class="post-header" (click)="setUserFilter(post.user)">
+    <div mat-card-avatar class="post-header-image" [style.backgroundImage]="'url(' + post.user.avatar + ')'"></div>
+    <mat-card-title>{{post.user.firstName}} {{post.user.lastName}}</mat-card-title>
+    <mat-card-subtitle>{{post.user.email}}</mat-card-subtitle>
+  </mat-card-header>
+  <!-- End post header -->
+
+  <img mat-card-image [src]="post.picture">
+
+  <!-- Post content containing post details -->
+  <mat-card-content>
+    <h3>{{post.title}}</h3>
+    <small>{{post.date | date:'medium'}}</small>
+    <p>{{post.description}}</p>
+  </mat-card-content>
+  <!-- End post content -->
+
+</mat-card>

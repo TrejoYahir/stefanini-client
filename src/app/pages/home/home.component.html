@@ -1,0 +1,64 @@
+<div class="home-container">
+  <div class="controls-container">
+
+    <!-- Start sort menu -->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>sort</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="togglePostsOrder('ASC')"
+              [ngClass]="{'selected': postService.postOrder === 'ASC'}"
+              [disabled]="postService.postOrder === 'ASC'">
+        <mat-icon>arrow_upward</mat-icon>
+        <span>Ascendant</span>
+      </button>
+      <button mat-menu-item (click)="togglePostsOrder('DESC')"
+              [ngClass]="{'selected': postService.postOrder === 'DESC'}"
+              [disabled]="postService.postOrder === 'DESC'">
+        <mat-icon>arrow_downward</mat-icon>
+        <span>Descendant</span>
+      </button>
+    </mat-menu>
+    <!-- End sort menu -->
+
+    <!-- Start paginator -->
+    <mat-paginator [length]="postList.total"
+                   [pageSize]="postList.limit"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="onPageEvent($event)" #paginator>
+    </mat-paginator>
+    <!-- End paginator -->
+
+  </div>
+
+  <div class="user-filter" *ngIf="selectedUser">
+    <mat-card class="filter-card">
+
+      <mat-card-header>
+        <div mat-card-avatar class="filter-header-image" [style.backgroundImage]="'url(' + selectedUser.avatar + ')'"></div>
+        <mat-card-title>{{selectedUser.firstName}} {{selectedUser.lastName}}</mat-card-title>
+        <mat-card-subtitle>{{selectedUser.email}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-actions>
+        <button mat-button color="warn" (click)="removeSelectedUser()">REMOVE FILTER</button>
+      </mat-card-actions>
+
+    </mat-card>
+
+  </div>
+
+  <!-- Spinner to show the user that content is loading -->
+  <mat-progress-spinner
+    *ngIf="postService.loadingPosts"
+    color="primary" [diameter]="30"
+    mode="indeterminate">
+  </mat-progress-spinner>
+  <!-- End spinner -->
+
+  <!-- Start post list -->
+  <div class="post-list">
+    <app-post *ngFor="let post of postList?.list" [post]="post"></app-post>
+  </div>
+  <!-- End post list -->
+</div>

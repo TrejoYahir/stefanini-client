@@ -1,0 +1,41 @@
+.home-container {
+  padding-top: 70px;
+  width: 100%;
+  text-align: center;
+  .mat-progress-spinner {
+    display: inline-block;
+  }
+}
+
+.user-filter {
+  width: 100%;
+  text-align: center;
+}
+
+.controls-container {
+  text-align: right;
+  padding: 0 24px;
+  .mat-paginator {
+    background: #fafafa;
+    display: inline-block;
+  }
+}
+
+.mat-menu-item.selected {
+  background: #fafafa;
+}
+
+.post-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-card {
+  max-width: 400px;
+  display: inline-block;
+  text-align: left;
+  .filter-header-image {
+    background-size: cover;
+  }
+}
