@@ -40,7 +40,6 @@ export class HomeComponent implements OnDestroy {
   }
 
   onPageEvent($event: PageEvent) {
-    console.log('page event', $event);
     this.postService.postLimit = $event.pageSize;
     this.postService.getPostList($event.pageIndex + 1);
   }

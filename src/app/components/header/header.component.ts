@@ -9,7 +9,7 @@ import {MenuService} from '../../services/menu.service';
 })
 export class HeaderComponent implements OnInit {
 
-  private isMobile: boolean;
+  public isMobile: boolean;
 
   constructor(private breakPointObserver: BreakpointObserver, private menuService: MenuService) {
     this.breakPointObserver.observe([

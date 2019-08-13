@@ -11,7 +11,7 @@ import {MatSidenav} from '@angular/material';
 })
 export class AppComponent {
 
-  private isMobile: boolean;
+  public isMobile: boolean;
   private navSubscription: Subscription;
   @ViewChild('nav', {static: false}) private nav: MatSidenav;
 
